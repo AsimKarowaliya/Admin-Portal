@@ -1,8 +1,82 @@
-﻿@{
+﻿@using Microsoft.AspNetCore.Identity;
+
+@inject SignInManager<ApplicationUser> sigInManager;
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
 </div>
+
+@if (sigInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Role</th>
+                <th scope="col">Links</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Admin</td>
+                <td><a href="#">Manage User Accounts</a></td>
+
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Admin</td>
+                <td><a href="#">Assign Roles</a></td>
+
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>Admin</td>
+                <td><a href="#">Help Desk</a></td>
+            </tr>
+        </tbody>
+    </table>
+}
+else if (sigInManager.IsSignedIn(User) && User.IsInRole("Finance_Admin"))
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Role</th>
+                <th scope="col">Links</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Finance Admin</td>
+                <td><a href="#">Finance Reports</a></td>
+
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>Finance Admin</td>
+                <td><a href="#">Accounts Payable</a></td>
+
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>Finance Admin</td>
+                <td><a href="#">Accounts Receivables</a></td>
+            </tr>
+            <tr>
+                <th scope="row">4</th>
+                <td>Finance Admin</td>
+                <td><a href="#">Tax</a></td>
+            </tr>
+        </tbody>
+    </table>
+}
+
