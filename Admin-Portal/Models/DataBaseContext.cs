@@ -16,6 +16,8 @@ namespace Admin_Portal.Models
         // public new DbSet<Register> Users { get; set; }
 
         
-       
+       public DbSet<Link> links { get; set; }
+
+        
     }
 }

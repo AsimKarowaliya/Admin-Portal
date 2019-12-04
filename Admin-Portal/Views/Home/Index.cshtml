@@ -5,10 +5,13 @@
     ViewData["Title"] = "Home Page";
 }
 
+@model Link
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
 
 </div>
+
+
 
 @if (sigInManager.IsSignedIn(User) && User.IsInRole("Admin"))
 {
@@ -22,24 +25,20 @@
             </tr>
         </thead>
         <tbody>
+            
+
+                @foreach (var items in ViewBag.Admin)
+                {
             <tr>
                 <th scope="row">1</th>
-                <td>Admin</td>
-                <td><a href="#">Manage User Accounts</a></td>
+                <td>@items.RoleName</td>
+                <td><a href="#">@items.LinkName</a></td>
+
 
             </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Admin</td>
-                <td><a href="#">Assign Roles</a></td>
-
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Admin</td>
-                <td><a href="#">Help Desk</a></td>
-            </tr>
-        </tbody>
+                }
+               
+</tbody>
     </table>
 }
 else if (sigInManager.IsSignedIn(User) && User.IsInRole("Finance_Admin"))
@@ -54,29 +53,95 @@ else if (sigInManager.IsSignedIn(User) && User.IsInRole("Finance_Admin"))
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Finance Admin</td>
-                <td><a href="#">Finance Reports</a></td>
 
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Finance Admin</td>
-                <td><a href="#">Accounts Payable</a></td>
+            @foreach (var items in ViewBag.Finance)
+            {
+                <tr>
+                    <th scope="row">1</th>
+                    <td>@items.RoleName</td>
+                    <td><a href="#">@items.LinkName</a></td>
 
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Finance Admin</td>
-                <td><a href="#">Accounts Receivables</a></td>
-            </tr>
-            <tr>
-                <th scope="row">4</th>
-                <td>Finance Admin</td>
-                <td><a href="#">Tax</a></td>
-            </tr>
+
+                </tr>
+            }
         </tbody>
     </table>
 }
+else if (sigInManager.IsSignedIn(User) && User.IsInRole("Sales_Admin"))
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Role</th>
+                <th scope="col">Links</th>
 
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var items in ViewBag.Sales)
+            {
+                <tr>
+                    <th scope="row">1</th>
+                    <td>@items.RoleName</td>
+                    <td><a href="#">@items.LinkName</a></td>
+
+
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else if (sigInManager.IsSignedIn(User) && User.IsInRole("Hr_Admin"))
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Role</th>
+                <th scope="col">Links</th>
+
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var items in ViewBag.Hr)
+            {
+                <tr>
+                    <th scope="row">1</th>
+                    <td>@items.RoleName</td>
+                    <td><a href="#">@items.LinkName</a></td>
+
+
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else if (sigInManager.IsSignedIn(User) && User.IsInRole("Engg_Admin"))
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Role</th>
+                <th scope="col">Links</th>
+
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var items in ViewBag.Engg)
+            {
+                <tr>
+                    <th scope="row">1</th>
+                    <td>@items.RoleName</td>
+                    <td><a href="#">@items.LinkName</a></td>
+
+
+                </tr>
+            }
+        </tbody>
+    </table>
+}

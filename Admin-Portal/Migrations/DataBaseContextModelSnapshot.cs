@@ -70,6 +70,24 @@ namespace Admin_Portal.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
+            modelBuilder.Entity("Admin_Portal.Models.Link", b =>
+                {
+                    b.Property<string>("ID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("LinkName");
+
+                    b.Property<string>("RoleName");
+
+                    b.Property<string>("RolesId");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("RolesId");
+
+                    b.ToTable("links");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
                     b.Property<string>("Id")
@@ -178,6 +196,13 @@ namespace Admin_Portal.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
+                });
+
+            modelBuilder.Entity("Admin_Portal.Models.Link", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", "Roles")
+                        .WithMany()
+                        .HasForeignKey("RolesId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

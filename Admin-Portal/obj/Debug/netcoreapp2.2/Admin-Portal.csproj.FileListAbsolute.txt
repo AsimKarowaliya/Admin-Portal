@@ -35,3 +35,5 @@ C:\Users\akaro\Documents\GitHub\ASP.NET Core Projects\Admin-Portal\Admin-Portal\
 C:\Users\akaro\Documents\GitHub\ASP.NET Core Projects\Admin-Portal\Admin-Portal\obj\Debug\netcoreapp2.2\Razor\Views\Shared\NotFound.g.cshtml.cs
 C:\Users\akaro\Documents\GitHub\ASP.NET Core Projects\Admin-Portal\Admin-Portal\obj\Debug\netcoreapp2.2\Razor\Views\Administration\EditRole.g.cshtml.cs
 C:\Users\akaro\Documents\GitHub\ASP.NET Core Projects\Admin-Portal\Admin-Portal\obj\Debug\netcoreapp2.2\Razor\Views\Administration\EditUsersInRole.g.cshtml.cs
+C:\Users\akaro\Documents\GitHub\ASP.NET Core Projects\Admin-Portal\Admin-Portal\obj\Debug\netcoreapp2.2\Razor\Views\Administration\AddLink.g.cshtml.cs
+C:\Users\akaro\Documents\GitHub\ASP.NET Core Projects\Admin-Portal\Admin-Portal\obj\Debug\netcoreapp2.2\Razor\Views\Administration\RemoveLinks.g.cshtml.cs
